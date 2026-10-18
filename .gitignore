@@ -5,3 +5,7 @@ venv/
 .env
 .DS_Store
 .pytest_cache/
+.runtime/
+node_modules/
+*.key
+~$*.xlsx
