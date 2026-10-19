@@ -1,0 +1,73 @@
+{
+  "product_version": "0.2.0-w1",
+  "runtime_revision": "w01-runtime-20260922",
+  "session_id": "c0b123ce-d579-424d-be41-75b7fb9124eb",
+  "model_mode": "live",
+  "model_name": "glm-5.3-flash",
+  "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
+  "status": "completed",
+  "result": {
+    "status": "completed",
+    "summary": "样例会员 M001 的 recall_review 标签已完成：草案经界面人工确认（approved）后由受控入口执行成功，系统核验的最新状态为 applied，标签已生效（label_active: true，版本 1）。该操作为样例动作模式下的教学流程，未涉及消费比较分析。",
+    "recommendations": [],
+    "evidence_ids": [
+      "8f9169e3-b917-4497-8a8a-d558336df859"
+    ],
+    "limitations": [
+      "本次为样例数据与样例动作流程，不代表真实会员或真实营销执行",
+      "标签撤销需通过受控入口由人工操作，Agent 不执行撤销",
+      "结果以系统核验的 applied 状态为准，后续如需核对可再次查询该动作 id"
+    ]
+  },
+  "observations": [
+    {
+      "name": "prepare_tag",
+      "result": {
+        "status": "awaiting_approval",
+        "draft": {
+          "id": "8f9169e3-b917-4497-8a8a-d558336df859",
+          "session": "c0b123ce-d579-424d-be41-75b7fb9124eb",
+          "payload": {
+            "member_id": "M001",
+            "tag": "recall_review"
+          },
+          "hash": "f0f2c179646e1026bf1f2454db25e688d44eff9f84f1fd544376060a2f5dce89",
+          "status": "draft",
+          "result": null
+        }
+      },
+      "call_id": "call_-7162855188766647304"
+    },
+    {
+      "name": "tag_execution",
+      "result": {
+        "id": "8f9169e3-b917-4497-8a8a-d558336df859",
+        "session": "c0b123ce-d579-424d-be41-75b7fb9124eb",
+        "payload": {
+          "member_id": "M001",
+          "tag": "recall_review"
+        },
+        "hash": "f0f2c179646e1026bf1f2454db25e688d44eff9f84f1fd544376060a2f5dce89",
+        "status": "applied",
+        "result": {
+          "action_id": "8f9169e3-b917-4497-8a8a-d558336df859",
+          "status": "applied",
+          "payload": {
+            "member_id": "M001",
+            "tag": "recall_review"
+          },
+          "label_active": true,
+          "label_version": 1
+        }
+      }
+    }
+  ],
+  "steps": 2,
+  "output_repairs": 0,
+  "usage": {
+    "prompt_tokens": 4180,
+    "completion_tokens": 1412,
+    "total_tokens": 5592
+  },
+  "trace_id": "b8c233e30e02fb8995f3ac58d7a525b9"
+}
