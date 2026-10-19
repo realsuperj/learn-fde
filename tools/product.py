@@ -26,6 +26,7 @@ def main():
         print('Sample tag API: http://127.0.0.1:'+str(mock.server_port),flush=True)
     from fde_product.agent import Agent
     from fde_product.models import CompatibleModel,ModelError
+    from fde_product.actions import ActionError
     try:
         model=CompatibleModel(timeout=90)
         agent=Agent(home,model,mock_url=('http://127.0.0.1:'+str(mock.server_port)) if mock else os.getenv('FDE_MOCK_URL','http://127.0.0.1:8766'),mock_token=os.getenv('FDE_MOCK_TOKEN','training-demo-token'),role='operator' if args.actions else 'analyst')
@@ -36,6 +37,7 @@ def main():
             resume={'approved':not args.reject,'draft_hash':args.confirm_hash} if args.confirm_hash else None
             print(json.dumps(agent.run(args.text,args.session,args.actions,resume),ensure_ascii=False,indent=2))
     except ModelError as e:raise SystemExit(e.code)
+    except ActionError as e:raise SystemExit(e.code)
     finally:
         if 'agent' in locals():agent.close()
         if mock:mock.shutdown();mock.server_close();mock_thread.join()

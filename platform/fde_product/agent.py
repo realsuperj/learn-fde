@@ -186,7 +186,8 @@ class Agent:
                 if not current.next:raise ActionError('NO_PENDING_DRAFT')
                 input=Command(resume=resume)
             else:
-                if current.next:raise ActionError('CONFIRM_OR_CANCEL_PENDING_DRAFT')
+                # A paused graph without a draft means the previous turn stopped midway, not that approval is pending.
+                if current.next:raise ActionError('CONFIRM_OR_CANCEL_PENDING_DRAFT' if current.values.get('draft') else 'SESSION_INTERRUPTED')
                 previous=current.values.get('messages',[])
                 if len(previous)>100:raise ActionError('SESSION_CONTEXT_LIMIT')
                 scope=explicit_windows(text or '')

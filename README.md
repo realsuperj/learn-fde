@@ -2,16 +2,16 @@
 
 产品 `0.2.0-w1`，能力矩阵 `w1-capabilities-0.2.0`，作业契约 `w01-0.2.0`。这是可运行、源码可读的本地教学产品。它在独立虚构的松果生活数据上完成会员消费比较、召回建议和证据说明，并通过独立 HTTP 标签系统演示受控动作。青禾数据、客户连接器和生产治理需后续开发。
 
-2026-09-12 fit-gap 修订：本表用于 W01 初步判断；分类依据不足可写“待判断”，并说明核实对象、所需证据和下一步。fit-gap 使用 `w01-0.2.1`，兼容原 `w01-0.2.0` 的五类作业；其余三份 JSON 仍为 `w01-0.2.0`。产品版本与能力矩阵保持。后续保留 W01 提交版、沿用编号按证据修订。填写、转换及分周保存方法见课程材料包作业任务书。
+fit-gap 用于 W01 初步判断；分类依据不足可写“待判断”，并说明核实对象、所需证据和下一步。fit-gap 使用 `w01-0.2.1`，兼容原 `w01-0.2.0` 的五类作业；其余三份 JSON 仍为 `w01-0.2.0`。产品版本与能力矩阵保持。后续保留 W01 提交版、沿用编号按证据修订。填写、转换及分周保存方法见课程材料包作业任务书。
 
 
-运行时修订 `w01-runtime-20260913`：日期支持方案按钮和“按第一个方案”；拒绝标签草案后可在同一任务提出新要求；金额、订单笔数和退款说明由工具结果生成。产品版本与作业契约保持。
+日期支持方案按钮和“按第一个方案”；拒绝标签草案后可在同一任务提出新要求；金额、订单笔数和退款说明由工具结果生成。
 
-运行时修订 `gateway-stages-20260922`：修正网关传参与推理配置，保留输出截断识别、一次扩容重试及追踪信息；模型配置和 W02 推理续接说明见 [模型配置与恢复](docs/model-configuration.md)。
+模型调用支持输出截断识别、一次扩容重试及追踪信息；模型配置和 W02 推理续接说明见 [模型配置与恢复](docs/model-configuration.md)。
 
 ## 1. 安装与运行
 
-官方路径使用 Python 3.11+；本轮实际运行版本见 `RELEASE.md`。SQLite 随 Python 提供。首次安装需要下载依赖；不用 Docker。
+使用 Python 3.11+。SQLite 随 Python 提供。首次安装需要下载依赖；不用 Docker。
 
 macOS/Linux，在解压目录执行：
 
@@ -22,7 +22,7 @@ python3 -m venv .venv
 .venv/bin/python tools/check_product.py --dry-run
 ```
 
-Windows 使用 `python -m venv .venv`，其余命令将 `.venv/bin/python` 换成 `.venv\Scripts\python.exe`。无需修改 PowerShell 执行策略。Windows 实机状态见发布记录，不把其他平台测试当成 Windows 验收。
+Windows 使用 `python -m venv .venv`，其余命令将 `.venv/bin/python` 换成 `.venv\Scripts\python.exe`。无需修改 PowerShell 执行策略。Windows、Linux 如遇问题，请反馈给课程方。
 
 配置自己的模型：`FDE_MODEL_URL`（完整 Chat Completions HTTPS 地址）、`FDE_MODEL_NAME`、`FDE_MODEL_KEY`。程序只读取明确的环境变量，不自动加载 `.env`，不尝试其他供应商、不跟随重定向、不打印密钥。教师配置不在本包中。模型适配器位于 `platform/fde_product/models.py`；不同协议通过适配器处理。
 
@@ -59,7 +59,7 @@ Windows 使用 `python -m venv .venv`，其余命令将 `.venv/bin/python` 换�
 
 该命令实际调用你的模型，并启动独立的临时端口标签系统，测试原有分析、澄清、缺数据、只读、HTTP 动作、幂等和撤销，并增加退款说明、文字选择日期、按钮选择日期、拒绝后更换目标，共 11 项；生成环境、模型基线、运行证据及 trace。验证动作只操作独立教学数据库。复测前先备份 `artifacts/w01/` 中的上一轮证据，或另解压一份工程再运行；`--home` 只改变运行数据库位置，不改变证据输出目录。
 
-基础评估默认 Promptfoo 0.122.2，需要 Node.js 22.22.0 或更高版本。从 `evals/` 按 `evals/README.md` 执行评估，完成后回到工程根目录：
+基础评估默认 Promptfoo 0.122.2，需要 Node.js 22.22.0 或更高版本；macOS 需要 12 或更高版本，macOS 11 的安装方法见 `evals/README.md`。从 `evals/` 按 `evals/README.md` 执行评估，完成后回到工程根目录：
 
 ```sh
 .venv/bin/python tools/finalize_evaluation.py

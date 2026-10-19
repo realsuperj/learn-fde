@@ -42,7 +42,8 @@ def verify(root,home):
             # Verification deliberately exercises a host-confirmed synthetic action.
             a=Agent(home,model,mock_url=url,role='operator');r=a.run(session=draft['session_id'],resume={'approved':True,'draft_hash':draft['confirmation']['draft_hash']});id=draft['confirmation']['draft_id'];connector=TagConnector(url,'training-demo-token');actual=connector.query(id)
             record('http_action',r,'completed',r['status']=='completed' and actual['status']=='applied' and actual['label_active'],time.monotonic()-start)
-            repeat=a.ledger.execute(id);record('idempotency',repeat,'applied',repeat['result']['label_version']==1)
+            # The verification tag store persists across reruns, so compare with this run's applied version.
+            repeat=a.ledger.execute(id);after=connector.query(id);record('idempotency',repeat,'applied',repeat['status']=='applied' and repeat['result']['label_version']==actual['label_version']==after['label_version'])
             undone=a.ledger.undo(id,draft['session_id'],'operator');record('undo',undone,'undone',undone['status']=='undone' and not undone['result']['label_active']);a.close()
         else:
             record('http_action',draft,'awaiting_approval',False,time.monotonic()-start)

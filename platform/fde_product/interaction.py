@@ -11,6 +11,7 @@ ERROR_MESSAGES = {
     'INVALID_REQUEST': '请求不完整，请检查输入后重试。',
     'FORBIDDEN': '当前身份不能执行此操作。',
     'SESSION_CONTEXT_LIMIT': '这个任务的对话已较长，请新建任务继续。',
+    'SESSION_INTERRUPTED': '上一轮在完成前中断，这个任务无法继续。请新建任务。',
 }
 
 def error_message(code):
