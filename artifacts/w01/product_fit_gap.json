@@ -36,7 +36,7 @@
           "note": "沈总不只是需要一个功能列表一个一次性的产品，关心的是产品能达到什么样的效果"
         },
         {
-          "source": "artifacts/w01/evidence/interviews/01-沈总-20261021-public.json",
+          "source": "artifacts/w01/evidence/interviews/W1-interview-c2df6ffe-7cef-5250-92ea-9426236244f7-public.json",
           "locator": "MSG-00659",
           "note": "沈总明确：目标为复购止跌回升且只有这一个目标、三个月复购止跌且趋势稳住就算有交代、三个月是他的期望非硬期限（reported，访谈当面确认）"
         }
@@ -71,7 +71,7 @@
           "note": "标准产品能按\"净消费下降\"识别出会员（M001/M004/M007），但口径不是复购率，且只在松果样例上验证，说明 GAP-002 存在口径差距"
         },
         {
-          "source": "artifacts/w01/evidence/interviews/01-沈总-20261021-public.json",
+          "source": "artifacts/w01/evidence/interviews/W1-interview-c2df6ffe-7cef-5250-92ea-9426236244f7-public.json",
           "locator": "MSG-00661",
           "note": "沈总明确：\"会员老化\"是个人判断、非验证过的结论；报表出处/计算人说不准（判断依据未知）"
         }
@@ -109,7 +109,7 @@
           "note": "门店数据缺失时产品返回 incomplete、不把未知当 0（仅松果样例）；接青禾数据时覆盖缺失能被识别，但需要先确认青禾各门店的数据覆盖情况"
         },
         {
-          "source": "artifacts/w01/evidence/interviews/01-沈总-20261021-public.json",
+          "source": "artifacts/w01/evidence/interviews/W1-interview-c2df6ffe-7cef-5250-92ea-9426236244f7-public.json",
           "locator": "MSG-00669",
           "note": "\"重点经营\"人群定义沈总无法敲定，要跟小林对口径（unknown）"
         }
@@ -142,7 +142,7 @@
           "note": "产品有一套  HTTP 执行 → 可撤销 的流程实现，并以松果样式数据验证，但是否和小林实际工作流程匹配待进一步沟通"
         },
         {
-          "source": "artifacts/w01/evidence/interviews/01-沈总-20261021-public.json",
+          "source": "artifacts/w01/evidence/interviews/W1-interview-c2df6ffe-7cef-5250-92ea-9426236244f7-public.json",
           "locator": "MSG-00669",
           "note": "沈总倾向先给名单和标签；触达动作由运营定、本周未定（reported+unknown）"
         }
