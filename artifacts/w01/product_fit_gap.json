@@ -1,0 +1,153 @@
+{
+  "contract_version": "w01-0.2.1",
+  "product_version": "0.2.0-w1",
+  "capability_matrix_version": "w1-capabilities-0.2.0",
+  "items": [
+    {
+      "id": "GAP-001",
+      "request": "尽快把产品用起来、三个月见到效果、不只给功能列表",
+      "category": "暂不承诺",
+      "capability_ids": [],
+      "evidence_status": "reported",
+      "evidence": [
+        {
+          "source": "MAIL-W01-001",
+          "locator": "这次我希望尽快把它用起来，三个月能看到效果",
+          "note": "沈总称要尽快用起来，三个月能看到效果，但不明确具体的节点和每个节点的交付效果如何定义"
+        },
+        {
+          "source": "MAIL-W01-001",
+          "locator": "也好向董事会有个交代",
+          "note": "沈总称产品的目的是为了向董事会有个交代，但需要确认达到什么样的效果才算有交代"
+        },
+        {
+          "source": "MAIL-W01-001",
+          "locator": "上个智能营销项目没做好",
+          "note": "沈总称上个智能营销项目没做好，但不清楚具体哪里没做好，怎么才算做好"
+        },
+        {
+          "source": "MAIL-W01-001",
+          "locator": "我认为供应商没有交付好",
+          "note": "沈总判断是供应商没交付好，但不清楚上个项目是如何交付交付了什么，怎样才算一个好的交付"
+        },
+        {
+          "source": "MAIL-W01-001",
+          "locator": "不要只给一个功能列表，我关心最后怎么见到效果",
+          "note": "沈总不只是需要一个功能列表一个一次性的产品，关心的是产品能达到什么样的效果"
+        },
+        {
+          "source": "artifacts/w01/evidence/interviews/01-沈总-20261021-public.json",
+          "locator": "MSG-00659",
+          "note": "沈总明确：目标为复购止跌回升且只有这一个目标、三个月复购止跌且趋势稳住就算有交代、三个月是他的期望非硬期限（reported，访谈当面确认）"
+        }
+      ],
+      "next_step": "三个月已确认是沈总\"期望\"，不是硬性期限、效果为复购止跌回升且趋势稳住（面谈记录MSG-00659）；但幅度和验收口径仍未定，维持暂不承诺。\n下一步：W2 和小林/老周对齐\"止跌\"和“趋势稳住”口径；口径定了可转阶段目标，否则维持暂不承诺。"
+    },
+    {
+      "id": "GAP-002",
+      "request": "把复购下滑的问题解决掉",
+      "category": "待判断",
+      "capability_ids": [],
+      "evidence_status": "reported",
+      "evidence": [
+        {
+          "source": "MAIL-W01-001",
+          "locator": "把复购下滑的问题解决掉",
+          "note": "沈总明确说要把复购下滑的问题解决掉这个诉求，但不确定解决复购率下滑就能否达到实际想要的产品效果"
+        },
+        {
+          "source": "MAIL-W01-001",
+          "locator": "我们会员复购率已经连续四个季度下滑",
+          "note": "沈总称复购连续下滑，这是 GAP-002 的前提，目前只有他一人说法，口径和数据来源未知"
+        },
+        {
+          "source": "MAIL-W01-001",
+          "locator": "我的判断是会员老化比较明显",
+          "note": "沈总判断是会员老化是复购下滑的原因，这也是GAP-002的前提，目前只有他一人说法，判断依据未知"
+        },
+        {
+          "source": "artifacts/w01/evidence/analysis.json",
+          "locator": "compare_spending.declining_members",
+          "note": "标准产品能按\"净消费下降\"识别出会员（M001/M004/M007），但口径不是复购率，且只在松果样例上验证，说明 GAP-002 存在口径差距"
+        },
+        {
+          "source": "artifacts/w01/evidence/interviews/01-沈总-20261021-public.json",
+          "locator": "MSG-00661",
+          "note": "沈总明确：\"会员老化\"是个人判断、非验证过的结论；报表出处/计算人说不准（判断依据未知）"
+        }
+      ],
+      "next_step": "\"会员老化\"沈总当面承认是未验证的个人判断（MSG-00661），不能作为依据。\n下一步：W2 找老周取报表、找小林确认复购口径；口径/数据对不上→维持待判断。"
+    },
+    {
+      "id": "GAP-003",
+      "request": "助手识别重点经营人群",
+      "category": "待判断",
+      "capability_ids": [
+        "CAP-003",
+        "CAP-006"
+      ],
+      "evidence_status": "reported",
+      "evidence": [
+        {
+          "source": "MAIL-W01-001",
+          "locator": "希望助手能帮运营识别哪些人需要重点经营",
+          "note": "沈总明确说希望助手能帮运营识别哪些人需要重点经营，但重点经营人群的规模和定义未确定"
+        },
+        {
+          "source": "MAIL-W01-001",
+          "locator": "我们有 80 万活跃会员",
+          "note": "沈总一人说法，口径和数据来源未知，会员规模影响数据接入方式和产品能否承载，样例只有 9 名会员，CAP-008 生产运营能力还没实现"
+        },
+        {
+          "source": "artifacts/w01/evidence/analysis.json",
+          "locator": "compare_spending.declining_members",
+          "note": "标准产品目前只能识别\"消费下降\"这一种人群，且只在松果样例上验证"
+        },
+        {
+          "source": "artifacts/w01/evidence/missing_coverage.json",
+          "locator": "status=incomplete，observations.compare_spending=partial",
+          "note": "门店数据缺失时产品返回 incomplete、不把未知当 0（仅松果样例）；接青禾数据时覆盖缺失能被识别，但需要先确认青禾各门店的数据覆盖情况"
+        },
+        {
+          "source": "artifacts/w01/evidence/interviews/01-沈总-20261021-public.json",
+          "locator": "MSG-00669",
+          "note": "\"重点经营\"人群定义沈总无法敲定，要跟小林对口径（unknown）"
+        }
+      ],
+      "next_step": "\"重点经营\"定义沈总答不了、要问小林（MSG-00669）。\n下一步：W2 找小林定义人群口径；是消费下降人群→客户配置，是新指标→产品缺口，需接青禾数据→含系统适配。"
+    },
+    {
+      "id": "GAP-004",
+      "request": "识别后给小林建议、别让她多整理表",
+      "category": "系统适配",
+      "capability_ids": [
+        "CAP-003",
+        "CAP-007"
+      ],
+      "evidence_status": "reported",
+      "evidence": [
+        {
+          "source": "MAIL-W01-001",
+          "locator": "识别出来之后，最好能直接给小林一些运营建议，别又让她多整理一套表",
+          "note": "沈总称最好能直接给小林运营建议，不想让只是她再维护一张新表；但具体如何设计使用的流程以及是否要接入其他系统都是未知的"
+        },
+        {
+          "source": "artifacts/w01/evidence/http_action.json",
+          "locator": "observations: prepare_tag=awaiting_approval → tag_execution=applied",
+          "note": "产品有一套 草案 → 等待用户确认 → HTTP 执行的流程实现，并以松果样式数据验证，但是否和小林实际工作流程匹配待进一步沟通"
+        },
+        {
+          "source": "artifacts/w01/evidence/undo.json",
+          "locator": "status=undone，result.label_active=false",
+          "note": "产品有一套  HTTP 执行 → 可撤销 的流程实现，并以松果样式数据验证，但是否和小林实际工作流程匹配待进一步沟通"
+        },
+        {
+          "source": "artifacts/w01/evidence/interviews/01-沈总-20261021-public.json",
+          "locator": "MSG-00669",
+          "note": "沈总倾向先给名单和标签；触达动作由运营定、本周未定（reported+unknown）"
+        }
+      ],
+      "next_step": "形式上沈总倾向名单+标签（MSG-00669）；触达动作要不要做/怎么对接由运营定、本周未定；\n下一步：W2 找小林确认名单/标签用法、更新频率，以及触达是否要产品支持；要写进现有系统 → 系统适配；只要导出名单 → 客户配置；触发机制需要产品支持 → 待判断，需要根据小林的回答再定。"
+    }
+  ]
+}
